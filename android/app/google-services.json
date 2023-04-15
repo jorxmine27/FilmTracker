@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "362229846944",
+    "project_id": "filmtracker-a490d",
+    "storage_bucket": "filmtracker-a490d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362229846944:android:4045dfd4c15ad56f630ac5",
+        "android_client_info": {
+          "package_name": "com.mycompany.filmtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362229846944-cca46h1tueog8k8qulpj0cmdnje2laoh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.filmtracker",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "362229846944-t2vmk5b5tqtd8d244eo1b1depgncdkgq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxadkasA08va_IAQ0xVGFVXQMa1Ge-c3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362229846944-t2vmk5b5tqtd8d244eo1b1depgncdkgq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "362229846944-d49gukaa62oh4o9tejvdt9h7p72btrjk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.filmtracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
