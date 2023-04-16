@@ -48,13 +48,16 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    final relative = height * 0.4;
     context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF1F1F1),
+        backgroundColor: Colors.white,
         drawer: Drawer(
           elevation: 16.0,
           child: Stack(
@@ -140,24 +143,38 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
           ),
         ),
         body: SafeArea(
+          top: false,
+          bottom: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                width: double.infinity,
-                height: 842.6,
+                width: width,
+                height: height,
                 decoration: BoxDecoration(
                   color: Color(0x00FCFCFC),
                 ),
                 child: Container(
-                  height: 184.1,
+                  height: height,
                   child: Stack(
                     children: [
+                      Column(children: [
+                        Row(
+                          children: [
+                            Image.network(
+                              getJsonField(widget.film, r'''$.IMAGEN'''),
+                              width: width,
+                              height: height * 0.6,
+                              fit: BoxFit.fitWidth,
+                            )
+                          ],
+                        ),
+                      ]),
                       Align(
                         alignment: AlignmentDirectional(0.0, 1.04),
                         child: Container(
-                          width: 395.8,
-                          height: 371.5,
+                          width: width,
+                          height: relative,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -165,9 +182,9 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                           child: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-0.98, -0.83),
+                                alignment: AlignmentDirectional(-0.95, -0.95),
                                 child: Text(
-                                  'Sinopsis',
+                                  'Sinop.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -177,10 +194,10 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, -0.15),
                                 child: Container(
-                                  width: 402.4,
-                                  height: 235.8,
+                                  width: width,
+                                  height: relative * 0.6,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -199,7 +216,7 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.85, -0.8),
+                                alignment: AlignmentDirectional(0.85, -0.95),
                                 child: Text(
                                   getJsonField(
                                     widget.film,
@@ -215,7 +232,7 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.39, -0.91),
+                                alignment: AlignmentDirectional(-0.50, -1.05),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 30.0,
@@ -225,7 +242,7 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                     Icons.video_label_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    size: 30.0,
+                                    size: 40.0,
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
@@ -244,7 +261,7 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.11, -0.84),
+                                alignment: AlignmentDirectional(-0.11, -1),
                                 child: InkWell(
                                   onTap: () async {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -273,12 +290,12 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                   child: Icon(
                                     Icons.add_circle,
                                     color: Colors.black,
-                                    size: 35.0,
+                                    size: 40.0,
                                   ),
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.22, -0.84),
+                                alignment: AlignmentDirectional(0.22, -1),
                                 child: InkWell(
                                   onTap: () async {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -312,28 +329,16 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                   child: Icon(
                                     Icons.remove_circle,
                                     color: Colors.black,
-                                    size: 35.0,
+                                    size: 40.0,
                                   ),
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.65, -0.89),
-                                child: ToggleIcon(
-                                  onPressed: () async {
-                                    setState(() => FFAppState().toggle =
-                                        !FFAppState().toggle);
-                                  },
-                                  value: FFAppState().toggle,
-                                  onIcon: Icon(
-                                    Icons.star_sharp,
-                                    color: FlutterFlowTheme.of(context).warning,
-                                    size: 40.0,
-                                  ),
-                                  offIcon: Icon(
-                                    Icons.star_sharp,
-                                    color: FlutterFlowTheme.of(context).warning,
-                                    size: 40.0,
-                                  ),
+                                alignment: AlignmentDirectional(0.65, -1),
+                                child: Icon(
+                                  Icons.star_sharp,
+                                  color: FlutterFlowTheme.of(context).warning,
+                                  size: 40.0,
                                 ),
                               ),
                               Align(
@@ -350,7 +355,7 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                   text: 'DÓNDE VER',
                                   options: FFButtonOptions(
                                     width: 363.1,
-                                    height: 49.8,
+                                    height: 50,
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -373,26 +378,6 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                                 ),
                               ),
                             ],
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10.0),
-                            bottomRight: Radius.circular(10.0),
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0),
-                          ),
-                          child: Image.network(
-                            getJsonField(
-                              widget.film,
-                              r'''$.IMAGEN''',
-                            ),
-                            width: 405.2,
-                            height: 500.7,
-                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

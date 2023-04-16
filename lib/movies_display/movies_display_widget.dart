@@ -48,6 +48,8 @@ class _MoviesDisplayWidgetState extends State<MoviesDisplayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -249,6 +251,7 @@ class _MoviesDisplayWidgetState extends State<MoviesDisplayWidget> {
           ),
         ),
         body: SafeArea(
+          bottom: false,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -342,8 +345,8 @@ class _MoviesDisplayWidgetState extends State<MoviesDisplayWidget> {
                   ],
                 ),
                 Container(
-                  width: double.infinity,
-                  height: 800.0,
+                  width: width,
+                  height: height * 0.88,
                   decoration: BoxDecoration(
                     color: Color(0x00FCFCFC),
                   ),

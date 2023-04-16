@@ -47,11 +47,14 @@ class _MisPeliculasWidgetState extends State<MisPeliculasWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         key: scaffoldKey,
         backgroundColor: Color(0xFFF1F1F1),
         drawer: Drawer(
@@ -306,8 +309,8 @@ class _MisPeliculasWidgetState extends State<MisPeliculasWidget> {
                   ],
                 ),
                 Container(
-                  width: double.infinity,
-                  height: 800.0,
+                  width: width,
+                  height: height * 0.88,
                   decoration: BoxDecoration(
                     color: Color(0x00FCFCFC),
                   ),
