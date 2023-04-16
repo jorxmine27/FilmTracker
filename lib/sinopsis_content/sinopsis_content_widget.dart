@@ -181,7 +181,7 @@ class _SinopsisContentWidgetState extends State<SinopsisContentWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(-0.95, -0.95),
                                   child: Text(
-                                    'Video',
+                                    'Sinop.',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

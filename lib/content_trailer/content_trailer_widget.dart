@@ -184,7 +184,7 @@ class _ContentTrailerWidgetState extends State<ContentTrailerWidget> {
                               Align(
                                 alignment: AlignmentDirectional(-0.95, -0.95),
                                 child: Text(
-                                  'Sinop.',
+                                  'Video',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
