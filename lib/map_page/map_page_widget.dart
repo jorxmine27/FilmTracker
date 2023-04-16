@@ -62,6 +62,8 @@ class _MapPageWidgetState extends State<MapPageWidget> {
             .of(context)
             .primaryBackground,
         body: SafeArea(
+          top: false,
+          bottom: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
