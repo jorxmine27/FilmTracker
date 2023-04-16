@@ -274,7 +274,7 @@ class _QrScanWidgetState extends State<QrScanWidget> {
 
                     setState(() {});
                   },
-                  text: 'Scanear QR',
+                  text: 'Escanear QR',
                   options: FFButtonOptions(
                     width: 283.4,
                     height: 60.0,
