@@ -49,6 +49,7 @@ class _LoginPageSupabaseWidgetState extends State<LoginPageSupabaseWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xE2F1F1F1),
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Stack(
             children: [
