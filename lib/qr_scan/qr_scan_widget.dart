@@ -144,7 +144,7 @@ class _QrScanWidgetState extends State<QrScanWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, -0.12),
+                        alignment: AlignmentDirectional(  0.5, -0.12),
                         child: InkWell(
                           onTap: () async {
                             context.pushNamed('QrScan');

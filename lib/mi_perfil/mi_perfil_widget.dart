@@ -165,7 +165,7 @@ class _MiPerfilWidgetState extends State<MiPerfilWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-0.57, 0.03),
+                    alignment: AlignmentDirectional(0.025, 0.05),
                     child: Text(
                       'Correo electrónico',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
