@@ -49,6 +49,7 @@ class _MiPerfilWidgetState extends State<MiPerfilWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         key: scaffoldKey,
         backgroundColor: Color(0xE2F1F1F1),
         body: SafeArea(
